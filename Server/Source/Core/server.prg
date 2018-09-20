@@ -341,9 +341,8 @@ DEFINE CLASS Server AS CUSTOM OLEPUBLIC
 				case m.loThread.ThreadState = 1 AND datetime()-m.loThread.LastUse > 30
 					*--- Disconnect when idle for 30 seconds
 					m.loThread.ThreadState = 3
-					
 					m.loThread = evaluate("Thread"+alltrim(str(m.lnThread)))
-					m.loThread.Disconnect()
+					m.loThread.Disconnect
 				endcase
 			endif
 		next
